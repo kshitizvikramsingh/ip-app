@@ -11,7 +11,7 @@ app.set('views', path.join(__dirname,'views'))
 app.use(express.static(path.join(__dirname,'public')))
 
 
-
+const port=process.env.PORT || 3000;
 
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true }))
@@ -35,6 +35,6 @@ app.post("/data",(req,res)=>{
 })
 
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log("Server is up on port 3000");
 })
